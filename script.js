@@ -226,7 +226,7 @@ document.addEventListener('keydown', (e) => {
     // Alt + W para abrir WhatsApp
     if (e.altKey && e.key === 'w') {
         e.preventDefault();
-        window.open('https://wa.me/5581999999999', '_blank');
+        window.open('https://wa.me/5581988724462', '_blank');
     }
     
     // Alt + E para ir para contato
@@ -314,10 +314,10 @@ window.openContact = () => {
 
 // Função para abrir WhatsApp
 window.openWhatsApp = () => {
-    window.open('https://wa.me/5581999999999', '_blank');
+    window.open('https://wa.me/5581988724462', '_blank');
 };
 
 // Função para abrir email
 window.openEmail = () => {
-    window.location.href = 'mailto:contato@seudypsicologia.com.br';
+    window.location.href = 'mailto:suelyasfora@hotmail.com';
 };
