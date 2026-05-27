@@ -189,16 +189,6 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.hero-text {
-    font-size: 1.1rem;
-    color: var(--light-text);
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    max-width: 500px;
-    text-align: justify;
 }
 
 .cta-buttons {
@@ -252,15 +242,19 @@ h1, h2, h3, h4, h5, h6 {
     animation: fadeInRight 0.8s ease;
 }
 
-.rounded-image {
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
+/* Novo Logo Psicologia Símbolo Psi */
+.logo-psi {
+    max-width: 250px;
+    height: auto;
+    color: var(--primary-green);
+    filter: drop-shadow(0 8px 16px rgba(91, 158, 92, 0.25));
+    animation: float 6s ease-in-out infinite;
 }
 
-.rounded-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 32px rgba(91, 158, 92, 0.2);
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
 /* ========================================
