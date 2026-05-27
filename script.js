@@ -97,49 +97,11 @@ window.addEventListener('scroll', () => {
 });
 
 /* ========================================
-   CONTADOR DE NÚMEROS (Se necessário em futuro)
-   ======================================== */
-
-function animateCounter(element, target, duration = 2000) {
-    let current = 0;
-    const increment = target / (duration / 16);
-    
-    const updateCounter = () => {
-        current += increment;
-        if (current < target) {
-            element.textContent = Math.floor(current);
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target;
-        }
-    };
-    
-    updateCounter();
-}
-
-/* ========================================
-   VALIDAÇÃO DE FORMULÁRIO (Se necessário)
-   ======================================== */
-
-// Função auxiliar para validação de email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Função para validar telefone
-function isValidPhone(phone) {
-    const phoneRegex = /^\(\d{2}\)\s?9?\d{4}-\d{4}$/;
-    return phoneRegex.test(phone.replace(/\s/g, ''));
-}
-
-/* ========================================
    RASTREAMENTO DE EVENTOS (Analytics)
    ======================================== */
 
 // Rastrear cliques em CTAs
 const trackEvent = (eventName, category, label) => {
-    // Se Google Analytics estiver implementado
     if (typeof gtag !== 'undefined') {
         gtag('event', eventName, {
             'event_category': category,
@@ -154,86 +116,6 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
     el.addEventListener('click', () => {
         trackEvent('whatsapp_click', 'engagement', el.textContent.trim());
     });
-});
-
-// Rastrear cliques em links de contato
-document.querySelectorAll('a[href^="mailto:"]').forEach(el => {
-    el.addEventListener('click', () => {
-        trackEvent('email_click', 'engagement', 'email');
-    });
-});
-
-/* ========================================
-   CARREGAR MAIS ESPECIALIDADES (Se necessário)
-   ======================================== */
-
-let specialtiesLoaded = 6;
-const allSpecialties = 7;
-
-function loadMoreSpecialties() {
-    if (specialtiesLoaded < allSpecialties) {
-        console.log('Carregando mais especialidades...');
-        specialtiesLoaded++;
-    } else {
-        console.log('Todas as especialidades foram carregadas');
-    }
-}
-
-/* ========================================
-   NOTIFICAÇÃO DE CONTATO (Feedback Visual)
-   ======================================== */
-
-function showNotification(message, type = 'success') {
-    const notification = document.createElement('div');
-    notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
-    notification.style.top = '100px';
-    notification.style.right = '20px';
-    notification.style.zIndex = '9999';
-    notification.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Remover após 5 segundos
-    setTimeout(() => {
-        notification.remove();
-    }, 5000);
-}
-
-/* ========================================
-   VALIDAÇÃO DE CAMPOS DO FORMULÁRIO
-   ======================================== */
-
-// Validar campo de email em tempo real
-const emailInputs = document.querySelectorAll('input[type="email"]');
-emailInputs.forEach(input => {
-    input.addEventListener('blur', () => {
-        if (input.value && !isValidEmail(input.value)) {
-            input.classList.add('is-invalid');
-        } else {
-            input.classList.remove('is-invalid');
-        }
-    });
-});
-
-/* ========================================
-   ATALHOS DE TECLADO
-   ======================================== */
-
-document.addEventListener('keydown', (e) => {
-    // Alt + W para abrir WhatsApp
-    if (e.altKey && e.key === 'w') {
-        e.preventDefault();
-        window.open('https://wa.me/5581988724462', '_blank');
-    }
-    
-    // Alt + E para ir para contato
-    if (e.altKey && e.key === 'e') {
-        e.preventDefault();
-        document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
-    }
 });
 
 /* ========================================
@@ -261,63 +143,41 @@ if ('IntersectionObserver' in window) {
 }
 
 /* ========================================
-   MODO ESCURO (Opcional - Comentado)
-   ======================================== */
-
-// Descomente para ativar modo escuro
-/*
-const toggleDarkMode = () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-};
-
-// Verificar preferência salva
-if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-}
-
-// Respeitar preferência do sistema
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    if (!localStorage.getItem('darkMode')) {
-        document.body.classList.add('dark-mode');
-    }
-}
-*/
-
-/* ========================================
    INICIALIZAÇÃO E READY
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('✨ Site Seudy Isfero Psicologia carregado com sucesso!');
-    
-    // Inicializar tooltips do Bootstrap (se necessário)
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-
-    // Log de analytics customizado
-    console.log('📊 Website: Seudy Isfero - Psicóloga e Psicanalista');
+    console.log('✨ Site Suely Asfora Psicologia carregado com sucesso!');
+    console.log('📊 Website: Suely Asfora - Psicóloga e Psicanalista');
     console.log('🟢 Status: Online');
     console.log('📍 Localização: Recife - PE');
 });
 
 /* ========================================
-   FUNÇÕES AUXILIARES EXPORTADAS
+   SEO (Otimização para Motores de Busca) - DADOS ESTRUTURADOS
    ======================================== */
 
-// Função para abrir formulário de contato
-window.openContact = () => {
-    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+// Injeção de JSON-LD estruturado para informar ao Google os detalhes do negócio local (Estratégia de SEO Avançada)
+const seoData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Suely Asfora - Psicóloga e Psicanalista",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Psi2.svg/512px-Psi2.svg.png",
+    "url": window.location.href,
+    "telephone": "+5581988724462",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Fernando Simões Barbosa, 266, sala 1409, Empresarial Wecon Center VI",
+        "addressLocality": "Boa Viagem, Recife",
+        "addressRegion": "PE",
+        "addressCountry": "BR"
+    },
+    "description": "Psicóloga e Psicanalista em Recife. Atendimento a adultos e idosos online, presencial e domiciliar. CRP 02/1038.",
+    "priceRange": "$$",
+    "medicalSpecialty": "Psychiatric"
 };
 
-// Função para abrir WhatsApp
-window.openWhatsApp = () => {
-    window.open('https://wa.me/5581988724462', '_blank');
-};
-
-// Função para abrir email
-window.openEmail = () => {
-    window.location.href = 'mailto:suelyasfora@hotmail.com';
-};
+const scriptSEO = document.createElement('script');
+scriptSEO.type = 'application/ld+json';
+scriptSEO.text = JSON.stringify(seoData);
+document.head.appendChild(scriptSEO);

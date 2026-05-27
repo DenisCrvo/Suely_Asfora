@@ -266,35 +266,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.about-content {
-    animation: fadeIn 0.8s ease 0.2s both;
-}
-
-.about-text {
-    font-size: 1.05rem;
-    color: var(--light-text);
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    text-align: justify;
-}
-
-.about-text strong {
-    color: var(--primary-green);
-    font-weight: 600;
-}
-
-.about-text.quote {
-    font-size: 1.15rem;
-    font-style: italic;
-    color: var(--primary-green);
-    padding: 2rem;
-    background-color: var(--pale-green);
-    border-left: 4px solid var(--primary-green);
-    border-radius: 8px;
-    text-align: center;
-    margin: 2rem 0;
-}
-
 .principles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
